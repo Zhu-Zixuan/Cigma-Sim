@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Cigma-Sim"
+version = "0.1.0"
+description = "A simulator for bit-sparsity aware matrix-multiplication hardware accelerators based on PyTorch."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "ZHU ZiXuan" }
+]
+dependencies = [
+    "torch>=2.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cigmasim*"]
+
+[tool.setuptools.package-data]
+"cigmasim" = ["py.typed"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "F",    # pyflakes
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific rules
+    "N",    # pep8-naming
+    "C4",   # flake8-comprehensions
+    "PERF", # perflint
+    "A",    # flake8-builtins
+    "T10",  # flake8-debugger
+]
+ignore = [
+    "E501", # Line too long
+    "N812", # lowercase imported as non-lowercase
+    "RUF022", # `__all__` is not sorted
+    "F841", # local variable is assigned to but never used
+]
+
+# Allow fix for all enabled rules (when "--fix") is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["cigmasim"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.11"
+namespace_packages = true
+explicit_package_bases = true
+ignore_missing_imports = true
+
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = false
+check_untyped_defs = true
+no_implicit_optional = true
+

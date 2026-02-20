@@ -1,0 +1,24 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: ruff format
+        entry: ruff format
+        language: system
+        types_or: [python, pyi, jupyter]
+      - id: ruff-check-fix
+        name: ruff check --fix
+        entry: ruff check --fix
+        language: system
+        types_or: [python, pyi, jupyter]
+      - id: ruff-check
+        name: ruff check
+        entry: ruff check
+        language: system
+        types_or: [python, pyi, jupyter]
+      - id: mypy-check
+        name: mypy check
+        entry: mypy
+        language: system
+        pass_filenames: false
+        args: [cigmasim, example]

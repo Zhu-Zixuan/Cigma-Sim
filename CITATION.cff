@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this simulator, please cite the software and the paper below."
+title: "cigma-sim"
+version: "0.1.0"
+date-released: 2026-02-21
+repository-code: "https://github.com/Zhu-Zixuan/Cigma-Sim.git"
+license: "MIT"
+authors:
+  - family-names: "Zhu"
+    given-names: "Zixuan"
+  - family-names: "Zhou"
+    given-names: "Xiaolong"
+
+preferred-citation:
+  type: article
+  title: "Bit-Sparsity Aware Acceleration With Compact CSD Code on Generic Matrix Multiplication"
+  journal: "IEEE Transactions on Computers"
+  year: 2025
+  month: 2
+  volume: 74
+  issue: 2
+  start: 414
+  end: 426
+  doi: "10.1109/TC.2024.3483632"
+  authors:
+    - family-names: "Zhu"
+      given-names: "Zixuan"
+    - family-names: "Zhou"
+      given-names: "Xiaolong"
+    - family-names: "Wang"
+      given-names: "Chundong"
+    - family-names: "Tian"
+      given-names: "Li"
+    - family-names: "Huang"
+      given-names: "Zunkai"
+    - family-names: "Zhu"
+      given-names: "Yongxin"
